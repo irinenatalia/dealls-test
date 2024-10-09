@@ -1,23 +1,22 @@
 import React, { useState } from 'react';
-import SwipeableViews from 'react-swipeable-views';
 import ApiService from "../services/Service";
 import { Link } from 'react-router-dom';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 const Home = () => {
     const [allArticles, setAllArticles] = useState([]);
     const [allCategories, setAllCategories] = useState([]);
     const [copyCategories, setCopyCategories] = useState([]);
 
-    const sliderStyles = {
-        slide: {
-          padding: 16,
-          minHeight: 300,
-          color: '#fff',
-        },
-        slideBG:[
-          '#FEA900', '#B3DC4A', '#6AC0FF'
-        ]
-      };
+    var sliderStyles = {
+      dots: true,
+      infinite: false,
+      autoplay: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+    };
 
     const queryParams = {
         page: 1,
@@ -53,9 +52,9 @@ const Home = () => {
 
     return (
         <div>
-            <div className='flex flex-col lg:flex-row gap-4'>
+            <div className='flex flex-col lg:flex-row gap-[40px] lg:gap-[60px]'>
                 <div className='featured-articles lg:w-3/4'>
-                    <SwipeableViews enableMouseEvents>
+                    <Slider {...sliderStyles}>
                       {
                       allArticles.map(article => (
                         <div className='article-container' style={Object.assign({}, sliderStyles.slide)}>
@@ -66,7 +65,10 @@ const Home = () => {
                         </div>
                       ))
                       }
-                    </SwipeableViews>
+                    </Slider>
+                    <div className='mt-[40px]'>
+                      <Link to="/articles" className='underline font-bold'>Read All Articles Here</Link>
+                    </div>
                 </div>
                 <div className='sidebar lg:w-1/4'>
                   {
