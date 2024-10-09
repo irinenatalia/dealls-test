@@ -1,38 +1,92 @@
-.App {
-  text-align: center;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1, h2, h3, h4, h5, h6 {
+  font-size: revert;
+  font-weight: revert;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header{
+  top: 0;
+  padding-left: 80px;
+  padding-right: 80px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  color: #fff;
+  height: 100px;
+  position: relative;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  box-sizing: border-box;
+}
+header .logo-slider, header nav{
+  opacity: 1;
+
+}
+header.hidden .logo-slider, header.hidden nav{
+  opacity: 0;
+  transition: transform 0.5s;
+}
+.header-logo{
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 10px;
 }
-
-.App-link {
-  color: #61dafb;
+nav{
+  display: flex;
+  align-items: center;
+  right: 0;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 40px;
+}
+nav ul li a{
+  font-family: "Inter", sans-serif;
+  line-height: 22.4px;
+  text-decoration: none;
+  color: #fff;
+}
+.react-swipeable-view-container > div{
+  border-radius: 10px;
+}
+.react-swipeable-view-container > div:nth-of-type(1){
+  background: linear-gradient(to bottom right, #03001e, #7303c0, #ec38bc, #fdeff9);
+}
+.react-swipeable-view-container > div:nth-of-type(2){
+  background: linear-gradient(to bottom right, #7f7fd5, #86a8e7, #91eae4);
+}
+.react-swipeable-view-container > div:nth-of-type(3){
+  background: linear-gradient(to bottom right, #c31432, #240b36);
+}
+.react-swipeable-view-container > div:nth-of-type(4){
+  background: linear-gradient(to bottom right, #8a2387, #e94057, #f27121);
+}
+.react-swipeable-view-container > div:nth-of-type(5){
+  background: linear-gradient(to bottom right, #ad5389, #3c1053);
+}
+.article-container{
+  font-weight: bold;
+  font-size: 32px;
+  padding: 30px 40px !important;
+}
+.article-read{
+  font-size: 1rem;
+  font-weight: 400;
+}
+.category-thumb{
+  padding-bottom: 20px;
+}
+.category-thumb:not(:first-child){
+  padding-top: 20px;
+}
+.category-thumb:not(:last-child){
+  border-bottom: 1px solid #cccccc;
+}
+.sidebar-ul{
+  list-style: disc;
+  padding-left: 1rem;
 }
