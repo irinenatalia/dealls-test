@@ -90,7 +90,7 @@ const DetailArticle = () => {
                   <Hammer onSwipe={handleSwipe}>
                     <div>
                       <h1>{article.title}</h1>
-                      <div className='flex items-center mb-4'>
+                      <div className='flex items-center mb-8'>
                           <span className='text-xs text-[#6B22C9]'>{new Date(article.created_at).toLocaleDateString('id-ID')}</span>
                           &nbsp;|&nbsp;
                           <div className='text-xs text-[#6B22C9] flex items-center'>
