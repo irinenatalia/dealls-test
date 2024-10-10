@@ -4,7 +4,9 @@ const getAllArticles = (params) => {
   return http.get(`/api/v1/articles`, { params: params});
 };
 const getDetailArticle = (id) => {
-  return http.get(`/api/v1/articles/${id}`);
+  return http.get(`/api/v1/articles/${id}`)
+            .catch(function (error) {
+            });
 };
 const getAllCategories = () => {
     return http.get("/api/v1/categories");
