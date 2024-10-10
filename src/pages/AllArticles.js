@@ -40,7 +40,7 @@ const AllArticles = () => {
                     {
                     cat.articles?.map(el => (
                         <div className='cat-article-card'>
-                            <Link to={`/article/${el.id}/${el.slug}/`}>
+                            <Link reloadDocument to={`/article/${el.id}/${el.slug}/`}>
                                 <div className='font-bold'>{el.title}</div>
                                 <div className='article-read'>Read &#10132;</div>
                             </Link>

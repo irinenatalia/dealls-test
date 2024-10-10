@@ -90,7 +90,7 @@ const DetailArticle = () => {
                   <Hammer onSwipe={handleSwipe}>
                     <div>
                       <h1>{article.title}</h1>
-                      <div className='flex items-center'>
+                      <div className='flex items-center mb-4'>
                           <span className='text-xs text-[#6B22C9]'>{new Date(article.created_at).toLocaleDateString('id-ID')}</span>
                           &nbsp;|&nbsp;
                           <div className='text-xs text-[#6B22C9] flex items-center'>
@@ -124,7 +124,7 @@ const DetailArticle = () => {
                       <ul className='sidebar-ul'>
                         {
                         cat.articles?.map(el => (
-                          <li><Link to={`/article/${el.id}/${el.slug}/`}>{el.title}</Link></li>
+                          <li><Link reloadDocument to={`/article/${el.id}/${el.slug}/`}>{el.title}</Link></li>
                         ))
                         }
                       </ul>

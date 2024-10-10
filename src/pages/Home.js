@@ -59,7 +59,7 @@ const Home = () => {
                       allArticles.map(article => (
                         <div className='article-container' style={Object.assign({}, sliderStyles.slide)}>
                           {article.title}
-                          <Link to={`/article/${article.id}/${article.slug}/`}>
+                          <Link reloadDocument to={`/article/${article.id}/${article.slug}/`}>
                             <div className='article-read'>Read &#10132;</div>
                           </Link>
                         </div>
@@ -80,7 +80,7 @@ const Home = () => {
                       <ul className='sidebar-ul'>
                         {
                         cat.articles?.map(el => (
-                          <li><Link to={`/article/${el.id}/${el.slug}/`}>{el.title}</Link></li>
+                          <li><Link reloadDocument to={`/article/${el.id}/${el.slug}/`}>{el.title}</Link></li>
                         ))
                         }
                       </ul>
